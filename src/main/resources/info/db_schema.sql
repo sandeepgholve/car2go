@@ -16,7 +16,7 @@ CREATE TABLE car (
 CREATE TABLE car_category (
     id bigint NOT NULL,
     name varchar(255)  NOT NULL,
-    rental_value money  NOT NULL,
+    rental_value numeric  NOT NULL,
     CONSTRAINT car_category_pk PRIMARY KEY (id)
 );
 
@@ -36,7 +36,7 @@ CREATE TABLE customer (
     first_name varchar(255)  NOT NULL,
     last_name varchar(255)  NOT NULL,
     birth_date date  NOT NULL,
-    gender char NOT NULL,
+    gender varchar(50) NOT NULL,
     driving_license_number varchar(255)  NOT NULL,
     driving_license_issue_dt date  NOT NULL,
     CONSTRAINT customer_pk PRIMARY KEY (id)
@@ -62,7 +62,7 @@ CREATE TABLE equipment_category (
 -- Table: location
 CREATE TABLE location (
     id bigint  NOT NULL,
-    street_address varchar(100)  NOT NULL,
+    street_address varchar(255)  NOT NULL,
     city varchar(50)  NOT NULL,
     state varchar(50)  NOT NULL,
     country varchar(50)  NOT NULL,
@@ -80,7 +80,7 @@ CREATE TABLE rental (
     drop_off_location_id bigint  NOT NULL,
     start_date date  NOT NULL,
     end_date date  NULL,
-    remarks text  NOT NULL,
+    remarks text  NULL,
     CONSTRAINT rental_pk PRIMARY KEY (id)
 );
 
@@ -90,7 +90,7 @@ CREATE TABLE rental_invoice (
     rental_id bigint  NOT NULL,
     car_rent numeric  NOT NULL,
     equipment_rent_total numeric  NULL,
-    insurance_cost_total numeric  NULL,
+    insurance_cost numeric  NULL,
     service_tax numeric  NOT NULL,
     VAT numeric  NOT NULL,
     total_amount_payable numeric  NOT NULL,

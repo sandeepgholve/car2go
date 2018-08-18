@@ -1,7 +1,12 @@
 package com.sg.car2go.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import java.util.Date;
 
+@Entity
+@Table(name = "customer")
 public class Customer {
     @Id
     @GeneratedValue(generator = "customer_generator")
@@ -12,4 +17,84 @@ public class Customer {
     )
     private Long id;
 
+    @NotNull
+    @Column(name = "first_name")
+    private String firstName;
+
+    @NotNull
+    @Column(name = "last_name")
+    private String lastName;
+
+    @NotNull
+    @Past
+    @Column(name = "birth_date")
+    private Date birthDate;
+
+    @NotNull
+    private Gender gender;
+
+    @NotNull
+    @Column(name = "driving_license_number")
+    private String drivingLicenseNumber;
+
+    @NotNull
+    @Past
+    @Column(name = "driving_license_issue_dt")
+    private Date drivingLicenseIssueDate;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public String getDrivingLicenseNumber() {
+        return drivingLicenseNumber;
+    }
+
+    public void setDrivingLicenseNumber(String drivingLicenseNumber) {
+        this.drivingLicenseNumber = drivingLicenseNumber;
+    }
+
+    public Date getDrivingLicenseIssueDate() {
+        return drivingLicenseIssueDate;
+    }
+
+    public void setDrivingLicenseIssueDate(Date drivingLicenseIssueDate) {
+        this.drivingLicenseIssueDate = drivingLicenseIssueDate;
+    }
 }

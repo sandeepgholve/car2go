@@ -5,8 +5,8 @@ import javax.validation.constraints.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "car_category")
-public class CarCategory {
+@Table(name = "equipment_category")
+public class EquipmentCategory {
     @Id
     @GeneratedValue(generator = "car_category_generator")
     @SequenceGenerator(
