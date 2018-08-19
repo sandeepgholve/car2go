@@ -13,7 +13,7 @@ public class Reservation implements Serializable {
     @SequenceGenerator(
             name = "reservation_generator",
             sequenceName = "reservation_sequence",
-            initialValue = 1000
+            initialValue = 1005
     )
     private Long id;
 

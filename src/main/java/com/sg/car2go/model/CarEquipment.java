@@ -13,7 +13,7 @@ public class CarEquipment implements Serializable {
     @SequenceGenerator(
             name = "car_equipment_generator",
             sequenceName = "car_equipment_sequence",
-            initialValue = 1000
+            initialValue = 1005
     )
     private Long id;
 

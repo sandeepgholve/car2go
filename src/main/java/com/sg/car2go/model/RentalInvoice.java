@@ -13,7 +13,7 @@ public class RentalInvoice implements Serializable {
     @SequenceGenerator(
             name = "rental_invoice_generator",
             sequenceName = "rental_invoice_sequence",
-            initialValue = 1000
+            initialValue = 1005
     )
     private Long id;
 

@@ -1,8 +1,7 @@
 package com.sg.car2go.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -14,15 +13,15 @@ public class Customer implements Serializable {
     @SequenceGenerator(
             name = "customer_generator",
             sequenceName = "customer_sequence",
-            initialValue = 1000
+            initialValue = 1005
     )
     private Long id;
 
-    @NotNull
+    @NotBlank
     @Column(name = "first_name")
     private String firstName;
 
-    @NotNull
+    @NotBlank
     @Column(name = "last_name")
     private String lastName;
 

@@ -13,7 +13,7 @@ public class Location implements Serializable {
     @SequenceGenerator(
             name = "location_generator",
             sequenceName = "location_sequence",
-            initialValue = 1000
+            initialValue = 1005
     )
     private Long id;
 

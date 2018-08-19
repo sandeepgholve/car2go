@@ -3,8 +3,7 @@ package com.sg.car2go.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.io.Serializable;
 
 @Entity
@@ -15,11 +14,11 @@ public class Car implements Serializable {
     @SequenceGenerator(
             name = "car_generator",
             sequenceName = "car_sequence",
-            initialValue = 1000
+            initialValue = 1005
     )
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne
     @JoinColumn(name = "car_category_id")
     @JsonIgnore
     private CarCategory category;
@@ -36,14 +35,14 @@ public class Car implements Serializable {
     @Size(min = 3, max = 100)
     private String color;
 
-    @NotBlank
+    @NotNull
     private Integer mileage;
 
-    @NotBlank
+    @NotNull
     @Column(name = "production_year", columnDefinition = "int")
     private Integer productionYear;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne
     @JoinColumn(name = "current_location_id")
     @JsonIgnore
     private Location currentLocation;
