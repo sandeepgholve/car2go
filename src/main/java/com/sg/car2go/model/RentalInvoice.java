@@ -2,11 +2,12 @@ package com.sg.car2go.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "rental_invoice")
-public class RentalInvoice {
+public class RentalInvoice implements Serializable {
     @Id
     @GeneratedValue(generator = "rental_invoice_generator")
     @SequenceGenerator(

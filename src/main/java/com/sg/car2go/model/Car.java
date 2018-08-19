@@ -1,17 +1,15 @@
 package com.sg.car2go.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
-import java.time.Year;
-import java.util.Calendar;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "car")
-public class Car {
+public class Car implements Serializable {
     @Id
     @GeneratedValue(generator = "car_generator")
     @SequenceGenerator(
@@ -42,9 +40,8 @@ public class Car {
     private Integer mileage;
 
     @NotBlank
-    @Past
     @Column(name = "production_year", columnDefinition = "int")
-    private Year productionYear;
+    private Integer productionYear;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "current_location_id")
@@ -99,11 +96,11 @@ public class Car {
         this.mileage = mileage;
     }
 
-    public Year getProductionYear() {
+    public Integer getProductionYear() {
         return productionYear;
     }
 
-    public void setProductionYear(Year productionYear) {
+    public void setProductionYear(Integer productionYear) {
         this.productionYear = productionYear;
     }
 
