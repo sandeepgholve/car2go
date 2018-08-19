@@ -3,21 +3,19 @@
 
 ### Technology stack:
 
+* Java 8
 * Spring Boot;
 * Spring Web;
 * Spring Data;
 * H2 / PostgreSQL database;
 * Hibernate;
 
-#####To run this application use:
+##### To run this application use:
+Checkoout the Project and run using following command.
 
 ```bash
 mvn spring-boot:run
 ```
-
-### Database Schema
-![alt tag](https://drive.google.com/open?id=1l5lpPuyoXWvZgZ48YtGjJMDtrK8EwCOs)
-
 ### Use cases: 
 
 #### Customers:
@@ -133,3 +131,7 @@ mvn spring-boot:run
 **[Work In Progress]**
 1. All CRUD operation on URL: http://localhost:8080/car2go/locations
 2. Also listing all Cars belong to current location
+
+### Database Schema
+![db_schema](https://user-images.githubusercontent.com/9638593/44314192-fcf54100-a415-11e8-8d56-3b3f49eab62e.png)
+
