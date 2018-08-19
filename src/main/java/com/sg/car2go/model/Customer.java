@@ -1,5 +1,7 @@
 package com.sg.car2go.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
@@ -28,6 +30,7 @@ public class Customer implements Serializable {
     @NotNull
     @Past
     @Column(name = "birth_date")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
     private Date birthDate;
 
     @NotNull
@@ -40,6 +43,7 @@ public class Customer implements Serializable {
     @NotNull
     @Past
     @Column(name = "driving_license_issue_dt")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
     private Date drivingLicenseIssueDate;
 
     public Long getId() {

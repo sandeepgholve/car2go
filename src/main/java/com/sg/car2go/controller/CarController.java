@@ -34,6 +34,17 @@ public class CarController {
         return carRepository.findAll(pageable);
     }
 
+    @GetMapping("/cars/{carId}")
+    public Car getCar(@PathVariable Long carId) {
+        return carRepository.findById(carId)
+                .orElseThrow(() -> new ResourceNotFoundException("Car not found with id " + carId));
+    }
+
+    /**
+     * Create new car
+     * @param carRequest Car request object
+     * @return Created car
+     */
     @PostMapping("/cars")
     public Car createCar(@Valid @RequestBody Car carRequest) {
         return carRepository.save(carRequest);
